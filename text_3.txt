@@ -1,0 +1,12 @@
+Current_PhA:
+0.08842618763446808
+Current_PhB:
+nan
+Current_PhC:
+nan
+Current_Avg:
+0.08842618763446808
+Voltage_Avg:
+230.6514434814453
+Active_power:
+0.009464079514145851

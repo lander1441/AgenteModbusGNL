@@ -1,0 +1,47 @@
+module com{
+module ulma{
+module supervisor{
+module dds{
+module status
+{
+   struct AgentReferenceType
+   {
+      //! Atributo propio
+      //! Logical Device al que pertenece el agente.
+      String ld;
+      //! Atributo propio
+      //! Logical Node del agente.
+      String ln;
+   };
+
+
+   
+   typedef string EstadoAgente;
+   
+   const EstadoAgente ESTADOAGENTE_INSTALLED = "INSTALLED";
+   const EstadoAgente ESTADOAGENTE_UNRESOLVED = "UNRESOLVED";
+   const EstadoAgente ESTADOAGENTE_READY = "READY";
+   const EstadoAgente ESTADOAGENTE_STARTING = "STARTING";
+   const EstadoAgente ESTADOAGENTE_STOPPING = "STOPPING";
+   const EstadoAgente ESTADOAGENTE_OPERATIONAL = "OPERATIONAL";
+   const EstadoAgente ESTADOAGENTE_ERROR = "ERROR";
+
+   struct Status
+   {
+      //! Id del agente que publica su estado
+      AgentReferenceType src_id;
+
+	  //id de la redundancia
+	  long id_redundancy;
+
+      //! Estado del agente
+      EstadoAgente status;
+
+	  //descripcion si estado es error
+	  String error_description;
+
+	  //! Tipo de agente
+      String masterSlave;
+   };
+      #pragma keylist Status src_id.ld src_id.ln
+};};};};};
