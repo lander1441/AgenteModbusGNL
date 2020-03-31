@@ -1,0 +1,44 @@
+
+module com
+{
+module ulma
+{
+module supervisor
+{
+module dds
+{
+module agents
+{
+module lecturaModBusNumerico
+{
+	//! Referencia unica de un agente: logicalDevice/logicalNode
+   struct AgentReferenceType
+   {
+      //! Atributo propio
+      //! Logical Device al que pertenece el agente.
+      String ld;
+      //! Atributo propio
+      //! Logical Node del agente.
+      String ln;
+   };
+
+
+   //! Estructura que define el contenido del topic LecturaModBusNumerico
+   struct LecturaModBusNumerico
+   {
+      //! Atributo propio
+      //! Id del dato
+      AgentReferenceType src_id;
+
+      //! Es la lectura
+      float lectura;
+	  
+   };
+   
+      #pragma keylist LecturaModBusNumerico src_id.ld src_id.ln
+};  
+};	  
+};
+};
+};
+};

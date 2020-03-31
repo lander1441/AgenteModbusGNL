@@ -1,0 +1,24 @@
+
+module com{
+module ulma{
+module supervisor{
+module dds{
+module kill
+{
+   //! Referencia unica de un agente: logicalDevice/logicalNode
+   struct AgentReferenceType
+   {
+      //! Atributo propio
+      //! Logical Device al que pertenece el agente.
+      String ld;
+      //! Atributo propio
+      //! Logical Node del agente.
+      String ln;
+   };
+   struct Kill
+   {
+      //! Id al que se le envia la orden.
+      AgentReferenceType dst_agent_id;
+   };
+      #pragma keylist Kill dst_agent_id.ld dst_agent_id.ln
+};};};};};

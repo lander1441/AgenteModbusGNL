@@ -1,0 +1,42 @@
+
+
+module com{
+module ulma{
+module supervisor{
+module dds{
+module launcherReq
+{
+
+   typedef string Command;
+
+   const Command COMMAND_ACTIVATE = "ACTIVATED";
+   const Command COMMAND_DEACTIVATE = "DEACTIVATE";
+
+   //! Referencia unica de un agente: logicalDevice/logicalNode
+   struct AgentReferenceType
+   {
+      //! Atributo propio
+      //! Logical Device al que pertenece el agente.
+      String ld;
+      //! Atributo propio
+      //! Logical Node del agente.
+      String ln;
+   };
+   
+   struct LauncherReq
+   {
+
+      //! Id del que envia la orden.
+      AgentReferenceType src_id;
+      //! Atributo propio
+      //! Id del agente destino al que se le envia la orden.
+      AgentReferenceType dst_id;
+      //! Atributo propio
+      //! Comando a ejecutar.(0 = DEACTIVATE, 1 = ACTIVATE)
+      Command command;
+      //! Atributo propio
+      //! Id asociado a la peticion de instalacion/desinstalacion
+      long request_id;
+   };
+      #pragma keylist LauncherReq src_id.ld src_id.ln dst_id.ld dst_id.ln
+};};};};};
